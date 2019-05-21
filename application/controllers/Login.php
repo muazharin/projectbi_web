@@ -10,15 +10,8 @@
         
         public function index()
         {
-            $cek = $this->M_login->check();
-            
-            $result = array();
-
-            while ($extraData = $cek) {
-                $result[]=$extraData;
-            }
-
-            echo json_encode($result);
+            $this->output->set_output(json_encode($this->M_login->check1(), JSON_PRETTY_PRINT))->_display();
+            exit;
         }
     }
     

@@ -8,10 +8,13 @@
             $username = $this->input->post('username');
             $password = $this->input->post('password');
 
+            // $username = 'muaz';
+            // $password = 'muaz123';
+
             $this->db->where('username',$username);
             $this->db->where('password',$password);
             $query = $this->db->get('user',1);
-            return $query;
+            return $query->result();
         }
 
         public function check()

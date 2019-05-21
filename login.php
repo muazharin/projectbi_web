@@ -1,11 +1,11 @@
 <?php
     include "connection.php";
 
-    $username = $_POST['username'];
-    $password = $_POST['password'];
+    // $username = $_POST['username'];
+    // $password = $_POST['password'];
 
-    // $username = 'muaz';
-    // $password = 'muaz';
+    $username = 'muaz';
+    $password = 'muaz123';
 
     $query = $con->query("SELECT * FROM user WHERE username = '".$username."' AND password = '".$password."'");
 

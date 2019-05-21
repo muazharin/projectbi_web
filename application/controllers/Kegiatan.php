@@ -11,4 +11,8 @@
         public function addData(){
             $this->M_kegiatan->addDataKegiatan();
         }
+
+        public function addDataEvent(){
+            $this->M_kegiatan->addDataUserEvent();
+        }
     }
