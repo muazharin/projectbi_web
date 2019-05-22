@@ -42,13 +42,8 @@
 
         public function addDataUserEvent(){
 
-            $data=[
-                'id_user'=> $this->input->post('id_user'),
-                'id_kegiatan'=> $this->input->post('id_kegiatan')
-            ];
-
-            $this->db->where('id_user', $id_user);
-            $this->db->where('id_kegiatan', $id_kegiatan);
+            $this->db->where('id_user', $this->input->post('id_user'));
+            $this->db->where('id_kegiatan', $this->input->post('id_kegiatan'));
             $res=$this->db->get('relasi');
 
             if($res->num_rows() <= 0){
