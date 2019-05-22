@@ -16,10 +16,5 @@
             $query = $this->db->get('user',1);
             return $query->result();
         }
-
-        public function check()
-        {
-            return $this->db->get('user')->result_array();
-        }
     }
     
