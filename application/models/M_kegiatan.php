@@ -59,4 +59,24 @@
                 $this->db->update('relasi',$data);
             }
         }
+
+        public function getAllData($id_user){
+
+            $query = $this->db->query(
+                "SELECT k.id_kegiatan,k.nama_kegiatan,k.waktu_kegiatan 
+                FROM kegiatan k, relasi r 
+                WHERE r.id_user = '".$id_user."' 
+                AND k.id_kegiatan = r.id_kegiatan
+                ORDER BY k.id_kegiatan ASC");
+            return $query->result();
+        }
+
+        public function getAllPesertaKegiatan($id_kegiatan){
+            $query = $this->db->query(
+                "SELECT u.nama_lengkap, u.email 
+                FROM user u, relasi r 
+                WHERE r.id_kegiatan = '".$id_kegiatan."'
+                AND u.id = r.id_user ");
+            return $query->result();
+        }
     }
